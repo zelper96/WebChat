@@ -65,11 +65,11 @@
         var output = '';
         output += '<li>';
         output += '    <h3>' + data.name + '</h3>';
-        output += '    <img class="image_style"  src ='+"http://127.0.0.1:52273/uploads/"+data.message + '>';
+        output += '    <img class="image_style"  src ='+"http://127.0.0.1:8080/uploads/"+data.message + '>';
           // output += '    <img class="image_style"  src =' + "/image" + '>';
         // 이때 이미지가 깨지는 이유: 127.0.0.1:52273 + data.message로 접속된다.
         // s3를 사용해서 s3주소를 날라오게 하면 가능하다. 
-        output += '    <p>' + data.date + '</p>';
+        output += '<p>' + data.date + '</p>';
         output += '</li>';
 
         // 객체 추가
@@ -89,7 +89,7 @@
         formData.append("image", $("input[name=test]")[0].files[0]);
         var obj = {formData};
         $.ajax({
-          url : 'http://127.0.0.1:52273/image/',
+          url : 'http://127.0.0.1:8080/image/',
           type : 'POST',
           method: "POST",
           timeout: 0,
