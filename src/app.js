@@ -57,6 +57,7 @@
 
     // 서버 열기
     server.listen(port, () => {
+      console.log(" ServerOpenStartDate: "+new Data().getTime().toString());
       console.log('Server Running at http://127.0.0.1:'+port);
     });
 
@@ -77,7 +78,7 @@
 
 
             roomName = data;
-            socket.join(data);
+            socket.join(roomName);
           });
 
           /*
